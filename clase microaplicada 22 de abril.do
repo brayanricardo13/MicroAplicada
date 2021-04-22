@@ -15,4 +15,5 @@ use "C:\Users\jhona\Desktop\Brayan\Github\MicroAplicada\BASES DE DATOS\Salario2.
 reg educ hermanos 
 correlate educ hermanos 
 reg lsalario educ 
-ivregress 2sls lsalario (educ = hermanos  )
+ivregress 2sls lsalario (educ = hermanos )
+
