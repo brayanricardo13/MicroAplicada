@@ -26,7 +26,7 @@ reg lsalario educ exper antiguedad ec sur urbano negro
  su n_rsq
  *Estadistico de sargan   
  estat overid 
- * si tengo sostpechas de heteroxedansticidad 
+ * si tengo sostpechas de heterocedansticidad hansen 
   ivregress 2sls lsalario exper exper2 (educ = educ_p educ_m) , robust 
    estat overid 
    
@@ -34,7 +34,7 @@ reg lsalario educ exper antiguedad ec sur urbano negro
 
  *forma manual 
    ivregress 2sls lsalario exper exper2 (educ = educ_p educ_m) 
-   
+   *variables dummy 
    gen fullsample =e(sample)
    
    reg educ exper exper2 educ_p educ_m if fullsample == 1 
@@ -47,9 +47,13 @@ reg lsalario educ exper exper2 uhat_red
 *p<0.05 significativo 5%    
 *p<0.01 significativo 1% 
    
-   *rechazo la hipotesis nula la variable es endogena  
+  *rechazo la hipotesis nula la variable es endogena al 10% 
+ *durwin   
+  estat endog
+  
+  
+
    
-  estat endogeniedad
    
    
   
