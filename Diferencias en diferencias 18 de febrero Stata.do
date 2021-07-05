@@ -18,7 +18,7 @@ reg rprice nearinc y81 y81nrinc
  clear 
  
 *Datos de panel en dos periodos
-"C:\Users\jhona\Downloads\Entrenamiento.dta"
+use "C:\Users\jhona\Desktop\Brayan\Github\MicroAplicada\BASES DE DATOS\Entrenamiento.dta"
 
 reg ldesperdicio subsidio lventas lempleados if periodo ==1988
 
